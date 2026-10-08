@@ -1,0 +1,17 @@
+{
+  "name": "nutritva-fullstack-app",
+  "version": "1.0.0",
+  "description": "Fullstack Nutrition & Wellness Tracker with Spring Boot 4 Java backend and React Vite TypeScript frontend",
+  "scripts": {
+    "dev": "concurrently -k -n \"BACKEND,FRONTEND\" -c \"green,cyan\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && .\\mvnw.cmd spring-boot:run",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm --prefix frontend run build",
+    "build:backend": "cd backend && .\\mvnw.cmd clean package -DskipTests",
+    "install:frontend": "npm --prefix frontend install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
