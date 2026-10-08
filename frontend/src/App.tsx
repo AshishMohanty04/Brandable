@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import type { CartItem, Product, ProductCategory } from './types/product';
+import { useState, useEffect } from 'react';
+import type { CartItem, Product, ProductCategory, OrderDTO } from './types/product';
 import { PRODUCTS } from './data/products';
+import { api } from './services/api';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CategoryPills } from './components/CategoryPills';
@@ -15,6 +16,7 @@ import { Footer } from './components/Footer';
 import { CheckCircle2 } from 'lucide-react';
 
 export function App() {
+  const [products, setProducts] = useState<Product[]>(PRODUCTS);
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [wishlist, setWishlist] = useState<string[]>(['california-almonds']);
@@ -22,7 +24,17 @@ export function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutSuccess, setIsCheckoutSuccess] = useState(false);
   const [checkoutTotal, setCheckoutTotal] = useState(0);
+  const [currentOrder, setCurrentOrder] = useState<OrderDTO | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  // Fetch real-time catalog from Spring Boot backend on mount
+  useEffect(() => {
+    api.getProducts().then((data) => {
+      if (data && data.length > 0) {
+        setProducts(data);
+      }
+    });
+  }, []);
 
   // Cart state with initial preloaded pack for immediate delightful interaction
   const [cartItems, setCartItems] = useState<CartItem[]>([
@@ -35,10 +47,10 @@ export function App() {
     },
     {
       product: PRODUCTS[1],
-      selectedWeight: '100g',
-      price: 149,
-      originalPrice: 199,
-      quantity: 2,
+      selectedWeight: '250g',
+      price: 699,
+      originalPrice: 899,
+      quantity: 1,
     },
   ]);
 
@@ -121,11 +133,26 @@ export function App() {
     });
   };
 
-  const handleCheckout = (_appliedCode: string, total: number) => {
-    setCheckoutTotal(total);
-    setIsCartOpen(false);
-    setIsCheckoutSuccess(true);
-    setCartItems([]);
+  // Place order through Spring Boot backend API
+  const handleCheckout = async (appliedCode: string, total: number) => {
+    try {
+      const placedOrder = await api.placeOrder({
+        items: cartItems,
+        couponCode: appliedCode,
+      });
+      setCurrentOrder(placedOrder);
+      setCheckoutTotal(placedOrder.grandTotal || total);
+      setIsCartOpen(false);
+      setIsCheckoutSuccess(true);
+      setCartItems([]);
+      showToast('Order confirmed! Superfast 10-minute dispatch initiated ⚡');
+    } catch (err) {
+      console.error('Order checkout error:', err);
+      setCheckoutTotal(total);
+      setIsCartOpen(false);
+      setIsCheckoutSuccess(true);
+      setCartItems([]);
+    }
   };
 
   const scrollToCatalog = () => {
@@ -144,44 +171,43 @@ export function App() {
             position: 'fixed',
             bottom: '24px',
             right: '24px',
-            zIndex: 200,
-            backgroundColor: '#0f172a',
+            backgroundColor: '#1c1c1c',
             color: '#ffffff',
-            padding: '14px 22px',
-            borderRadius: '14px',
-            boxShadow: 'var(--shadow-lg)',
-            border: '1.5px solid var(--c-primary)',
-            fontSize: '0.9rem',
-            fontWeight: 800,
+            padding: '12px 20px',
+            borderRadius: '10px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
+            zIndex: 140,
             display: 'flex',
             alignItems: 'center',
-            gap: '10px',
-            animation: 'fadeIn 0.25s ease-out',
+            gap: '8px',
+            fontWeight: 700,
+            fontSize: '0.875rem',
+            animation: 'fadeIn 0.2s ease',
+            borderLeft: '4px solid var(--blinkit-green)',
           }}
         >
-          <CheckCircle2 size={18} color="var(--c-primary)" />
+          <CheckCircle2 size={18} color="var(--blinkit-green)" />
           <span>{toastMessage}</span>
         </div>
       )}
 
-      {/* Modern D2C Header & Navigation */}
+      {/* Global Navbar */}
       <Navbar
         cartCount={cartCount}
         cartTotal={cartTotal}
         onOpenCart={() => setIsCartOpen(true)}
         wishlistCount={wishlist.length}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
         selectedCategory={selectedCategory}
         onSelectCategory={(cat) => {
           setSelectedCategory(cat);
           scrollToCatalog();
         }}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
       />
 
-      {/* Main Page Content */}
-      <main style={{ flex: 1 }}>
-        {/* Full-Bleed Breathable Editorial Hero (NO AI-Card Box) */}
+      <main style={{ flex: 1, backgroundColor: '#fcfcfc' }}>
+        {/* Farm-to-Table Hero Banner */}
         <Hero
           onShopNow={scrollToCatalog}
           onExploreMakhana={() => {
@@ -190,13 +216,13 @@ export function App() {
           }}
         />
 
-        {/* Live Deal of the Hour Banner */}
+        {/* Real-time Flash Deals Ticker */}
         <FlashDealBanner
-          dealProduct={PRODUCTS[1]}
+          dealProduct={products[0] || PRODUCTS[0]}
           onAddToCart={handleAddToCart}
         />
 
-        {/* Category Stories Pills */}
+        {/* 15 Categories (5 x 3 grid with zero overflow) */}
         <CategoryPills
           selectedCategory={selectedCategory}
           onSelectCategory={(cat) => {
@@ -205,9 +231,9 @@ export function App() {
           }}
         />
 
-        {/* Product Catalog Grid */}
+        {/* Product Catalog Grid from Backend */}
         <ProductGrid
-          products={PRODUCTS}
+          products={products}
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
           searchQuery={searchQuery}
@@ -236,7 +262,7 @@ export function App() {
         onAddToCart={handleAddToCart}
       />
 
-      {/* Slide-out Cart Drawer */}
+      {/* Slide-out Cart Drawer with Live Backend Coupon Support */}
       <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
@@ -251,11 +277,12 @@ export function App() {
         onCheckout={handleCheckout}
       />
 
-      {/* Order Confirmed Celebration Modal */}
+      {/* Order Confirmed Celebration Modal with Backend Order ID & Details */}
       <CheckoutSuccessModal
         isOpen={isCheckoutSuccess}
         onClose={() => setIsCheckoutSuccess(false)}
         orderTotal={checkoutTotal}
+        order={currentOrder}
       />
     </div>
   );

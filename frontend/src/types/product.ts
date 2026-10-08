@@ -57,3 +57,50 @@ export interface CartItem {
   originalPrice: number;
   quantity: number;
 }
+
+export interface CategoryInfo {
+  num: number;
+  id: ProductCategory;
+  name: string;
+  examples: string;
+  icon: string;
+  productCount?: number;
+}
+
+export interface OrderItemDTO {
+  productId: string;
+  productName: string;
+  weight: string;
+  price: number;
+  originalPrice: number;
+  quantity: number;
+  image: string;
+}
+
+export interface OrderDTO {
+  orderId: string;
+  items: OrderItemDTO[];
+  customerName: string;
+  customerPhone: string;
+  customerEmail: string;
+  deliveryAddress: string;
+  paymentMethod: string;
+  paymentStatus: string;
+  orderStatus: string;
+  subtotal: number;
+  discountAmount: number;
+  shippingFee: number;
+  grandTotal: number;
+  couponCode?: string;
+  estimatedDeliveryMinutes: number;
+  createdAt: string;
+  trackingMessage: string;
+}
+
+export interface CouponResult {
+  valid: boolean;
+  code: string;
+  discountAmount: number;
+  discountPercentage: number;
+  message: string;
+}

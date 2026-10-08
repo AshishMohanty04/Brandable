@@ -1,0 +1,107 @@
+[
+  {
+    "num": 1,
+    "id": "ALMONDS",
+    "name": "Almonds (Badam)",
+    "examples": "California Almonds, Mamra Almonds",
+    "icon": "🌰"
+  },
+  {
+    "num": 2,
+    "id": "CASHEWS",
+    "name": "Cashews (Kaju)",
+    "examples": "W180, W240, W320, Roasted Cashews",
+    "icon": "🥜"
+  },
+  {
+    "num": 3,
+    "id": "PISTACHIOS",
+    "name": "Pistachios (Pista)",
+    "examples": "Roasted, Salted, Iranian Pistachios",
+    "icon": "🟢"
+  },
+  {
+    "num": 4,
+    "id": "WALNUTS",
+    "name": "Walnuts (Akhrot)",
+    "examples": "Whole Walnuts, Walnut Kernels",
+    "icon": "🧠"
+  },
+  {
+    "num": 5,
+    "id": "RAISINS",
+    "name": "Raisins (Kishmish)",
+    "examples": "Golden Raisins, Black Raisins",
+    "icon": "🍇"
+  },
+  {
+    "num": 6,
+    "id": "DATES",
+    "name": "Dates (Khajur)",
+    "examples": "Ajwa, Medjool, Safawi, Kimia",
+    "icon": "🌴"
+  },
+  {
+    "num": 7,
+    "id": "DRIED_FRUITS",
+    "name": "Dried Fruits",
+    "examples": "Figs, Apricots, Prunes, Cranberries",
+    "icon": "🍑"
+  },
+  {
+    "num": 8,
+    "id": "SEEDS",
+    "name": "Seeds",
+    "examples": "Chia, Flax, Pumpkin, Sunflower",
+    "icon": "🌱"
+  },
+  {
+    "num": 9,
+    "id": "EXOTIC_NUTS",
+    "name": "Exotic Nuts",
+    "examples": "Macadamia, Brazil Nuts, Hazelnuts, Pecan",
+    "icon": "🥥"
+  },
+  {
+    "num": 10,
+    "id": "MAKHANA",
+    "name": "Makhana",
+    "examples": "Plain, Roasted, Flavoured",
+    "icon": "🍿"
+  },
+  {
+    "num": 11,
+    "id": "MIXED_DRY_FRUITS",
+    "name": "Mixed Dry Fruits",
+    "examples": "Panchmeva, Mixed Nuts, Premium Mix",
+    "icon": "🥣"
+  },
+  {
+    "num": 12,
+    "id": "ROASTED_FLAVOURED",
+    "name": "Roasted & Flavoured",
+    "examples": "Peri-peri, Salted, Masala",
+    "icon": "🌶️"
+  },
+  {
+    "num": 13,
+    "id": "TRAIL_MIX",
+    "name": "Trail Mix & Healthy Snacks",
+    "examples": "Nut Mix, Fruit & Nut Mix",
+    "icon": "🏃"
+  },
+  {
+    "num": 14,
+    "id": "GIFT_HAMPERS",
+    "name": "Gift Hampers 🎁",
+    "examples": "Wedding, Birthday, Diwali, Corporate",
+    "icon": "🎁"
+  },
+  {
+    "num": 15,
+    "id": "COMBOS_OFFERS",
+    "name": "Combos & Offers",
+    "examples": "Family Pack, Festive Combo, Value Pack",
+    "icon": "🏷️"
+  }
+]

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { CartItem } from '../types/product';
 import { X, Trash2, ArrowRight, Zap, Check, Tag } from 'lucide-react';
+import { api } from '../services/api';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -21,15 +22,34 @@ export const CartDrawer = ({
 }: CartDrawerProps) => {
   const [couponCode, setCouponCode] = useState('BLINK15');
   const [isCouponApplied, setIsCouponApplied] = useState(true);
+  const [discountAmount, setDiscountAmount] = useState(0);
+  const [couponMsg, setCouponMsg] = useState<string>('15% off applied successfully!');
   const [couponError, setCouponError] = useState<string | null>(null);
+  const [isValidating, setIsValidating] = useState(false);
+
+  const FREE_SHIPPING_THRESHOLD = 299;
+  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  // Recalculate coupon discount whenever subtotal changes
+  useEffect(() => {
+    if (isCouponApplied && couponCode) {
+      api.validateCoupon(couponCode, subtotal).then(res => {
+        if (res.valid) {
+          setDiscountAmount(res.discountAmount);
+          setCouponMsg(res.message);
+          setCouponError(null);
+        } else {
+          setIsCouponApplied(false);
+          setDiscountAmount(0);
+        }
+      });
+    } else {
+      setDiscountAmount(0);
+    }
+  }, [subtotal, isCouponApplied, couponCode]);
 
   if (!isOpen) return null;
 
-  const FREE_SHIPPING_THRESHOLD = 299;
-
-  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  
-  const discountAmount = isCouponApplied ? Math.round(subtotal * 0.15) : 0;
   const isFreeShipping = subtotal >= FREE_SHIPPING_THRESHOLD || subtotal === 0;
   const shippingFee = isFreeShipping ? 0 : 25;
   const finalTotal = Math.max(0, subtotal - discountAmount + shippingFee);
@@ -37,14 +57,31 @@ export const CartDrawer = ({
   const amountNeededForFreeShip = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
   const freeShipPercent = Math.min(100, Math.round((subtotal / FREE_SHIPPING_THRESHOLD) * 100));
 
-  const handleApplyCoupon = (e: React.FormEvent) => {
+  const handleApplyCoupon = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (couponCode.trim().toUpperCase() === 'BLINK15' || couponCode.trim().toUpperCase() === 'FRESH15') {
-      setIsCouponApplied(true);
-      setCouponError(null);
-    } else {
-      setIsCouponApplied(false);
-      setCouponError('Invalid code. Try BLINK15 for 15% off.');
+    if (!couponCode.trim()) {
+      setCouponError('Please enter a coupon code.');
+      return;
+    }
+
+    setIsValidating(true);
+    setCouponError(null);
+    try {
+      const res = await api.validateCoupon(couponCode, subtotal);
+      if (res.valid) {
+        setIsCouponApplied(true);
+        setDiscountAmount(res.discountAmount);
+        setCouponMsg(res.message);
+        setCouponError(null);
+      } else {
+        setIsCouponApplied(false);
+        setDiscountAmount(0);
+        setCouponError(res.message || 'Invalid coupon code.');
+      }
+    } catch {
+      setCouponError('Failed to validate coupon with server.');
+    } finally {
+      setIsValidating(false);
     }
   };
 
@@ -118,150 +155,220 @@ export const CartDrawer = ({
         {/* Free Delivery Bar */}
         <div
           style={{
-            padding: '10px 20px',
             backgroundColor: '#ffffff',
-            borderBottom: '1px solid var(--c-border)',
+            padding: '10px 20px',
+            borderBottom: '1px solid #f3f4f6',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '6px',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px', fontSize: '0.78rem', fontWeight: 800, color: '#1c1c1c' }}>
-            <span>
-              {isFreeShipping && subtotal > 0
-                ? "🎉 You've unlocked FREE Delivery!"
-                : `Add ₹${amountNeededForFreeShip} more for FREE Delivery`}
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', fontWeight: 700 }}>
+            {isFreeShipping ? (
+              <span style={{ color: 'var(--blinkit-green)' }}>
+                🎉 Yay! You get FREE 10-min Delivery
+              </span>
+            ) : (
+              <span style={{ color: '#4b5563' }}>
+                Add <strong>₹{amountNeededForFreeShip}</strong> more for FREE delivery
+              </span>
+            )}
+            <span style={{ color: 'var(--blinkit-green)', fontWeight: 800 }}>
+              {isFreeShipping ? 'FREE' : '₹25 fee'}
             </span>
-            <span style={{ color: 'var(--blinkit-green)' }}>₹{subtotal} / ₹{FREE_SHIPPING_THRESHOLD}</span>
           </div>
-
-          <div style={{ height: '5px', backgroundColor: '#e5e7eb', borderRadius: '999px', overflow: 'hidden' }}>
+          <div style={{ width: '100%', height: '5px', backgroundColor: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
             <div
               style={{
-                height: '100%',
                 width: `${freeShipPercent}%`,
+                height: '100%',
                 backgroundColor: 'var(--blinkit-green)',
-                borderRadius: '999px',
                 transition: 'width 0.3s ease',
               }}
             />
           </div>
         </div>
 
-        {/* Cart Items List */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px' }}>
+        {/* Items List */}
+        <div
+          style={{
+            flex: 1,
+            overflowY: 'auto',
+            padding: '16px 20px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '12px',
+          }}
+        >
           {cartItems.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '60px 0' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '12px' }}>🛍️</div>
-              <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1c1c1c', marginBottom: '4px' }}>
+            <div
+              style={{
+                textAlign: 'center',
+                padding: '60px 20px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '12px',
+              }}
+            >
+              <div
+                style={{
+                  width: '72px',
+                  height: '72px',
+                  borderRadius: '50%',
+                  backgroundColor: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: 'var(--shadow-sm)',
+                  fontSize: '2rem',
+                }}
+              >
+                🛒
+              </div>
+              <h4 style={{ fontWeight: 800, fontSize: '1.1rem', color: '#1c1c1c' }}>
                 Your cart is empty
               </h4>
-              <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '16px' }}>
-                Your favorite snacks delivered in 10 minutes!
+              <p style={{ color: '#6b7280', fontSize: '0.85rem', maxWidth: '240px' }}>
+                Explore fresh California almonds, creamy W240 cashews, and dates to get started!
               </p>
-              <button onClick={onClose} className="btn-blinkit-green">
-                Browse Products
-              </button>
             </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {cartItems.map((item) => (
+            <div style={{ backgroundColor: '#ffffff', borderRadius: '14px', padding: '14px', border: '1px solid var(--c-border)' }}>
+              {cartItems.map((item, idx) => (
                 <div
                   key={`${item.product.id}-${item.selectedWeight}`}
                   style={{
                     display: 'flex',
-                    gap: '12px',
-                    padding: '12px 14px',
-                    borderRadius: '12px',
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e5e7eb',
                     alignItems: 'center',
+                    gap: '12px',
+                    padding: '10px 0',
+                    borderBottom: idx < cartItems.length - 1 ? '1px solid #f3f4f6' : 'none',
                   }}
                 >
                   <img
                     src={item.product.image}
                     alt={item.product.name}
                     style={{
-                      width: '60px',
-                      height: '60px',
+                      width: '56px',
+                      height: '56px',
                       borderRadius: '8px',
                       objectFit: 'cover',
-                      border: '1px solid #f3f4f6',
+                      backgroundColor: '#f9fafb',
                     }}
                   />
-
-                  <div style={{ flex: 1 }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <h5
                       style={{
-                        fontSize: '0.85rem',
-                        fontWeight: 800,
+                        fontSize: '0.875rem',
+                        fontWeight: 700,
                         color: '#1c1c1c',
-                        lineHeight: 1.25,
+                        margin: 0,
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap',
                       }}
                     >
                       {item.product.name}
                     </h5>
-                    <div style={{ fontSize: '0.725rem', color: '#6b7280', marginTop: '2px' }}>
-                      {item.selectedWeight}
+                    <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '2px' }}>
+                      {item.selectedWeight} • ₹{item.price} each
                     </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '6px' }}>
-                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                        <strong style={{ fontSize: '0.95rem', color: '#1c1c1c', fontWeight: 900 }}>
-                          ₹{item.price * item.quantity}
-                        </strong>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
+                      <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#1c1c1c' }}>
+                        ₹{item.price * item.quantity}
+                      </span>
+                      {item.originalPrice > item.price && (
                         <span style={{ fontSize: '0.75rem', color: '#9ca3af', textDecoration: 'line-through' }}>
                           ₹{item.originalPrice * item.quantity}
                         </span>
-                      </div>
-
-                      {/* Blinkit Quantity Stepper */}
-                      <div className="qty-stepper-blinkit">
-                        <button
-                          onClick={() =>
-                            onUpdateQty(item.product.id, item.selectedWeight, item.quantity - 1)
-                          }
-                        >
-                          -
-                        </button>
-                        <span>{item.quantity}</span>
-                        <button
-                          onClick={() =>
-                            onUpdateQty(item.product.id, item.selectedWeight, item.quantity + 1)
-                          }
-                        >
-                          +
-                        </button>
-                      </div>
+                      )}
                     </div>
                   </div>
 
-                  <button
-                    onClick={() => onRemoveItem(item.product.id, item.selectedWeight)}
+                  {/* Quantity Stepper */}
+                  <div
                     style={{
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      color: '#9ca3af',
-                      padding: '4px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      backgroundColor: 'var(--blinkit-green-light)',
+                      border: '1px solid var(--blinkit-green)',
+                      borderRadius: '6px',
+                      overflow: 'hidden',
                     }}
-                    title="Remove item"
                   >
-                    <Trash2 size={15} />
-                  </button>
+                    <button
+                      onClick={() => {
+                        if (item.quantity <= 1) {
+                          onRemoveItem(item.product.id, item.selectedWeight);
+                        } else {
+                          onUpdateQty(item.product.id, item.selectedWeight, item.quantity - 1);
+                        }
+                      }}
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                        color: 'var(--blinkit-green)',
+                        fontWeight: 800,
+                        fontSize: '1rem',
+                        width: '28px',
+                        height: '30px',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      {item.quantity === 1 ? <Trash2 size={13} color="var(--blinkit-green)" /> : '−'}
+                    </button>
+                    <span
+                      style={{
+                        fontSize: '0.85rem',
+                        fontWeight: 800,
+                        color: 'var(--blinkit-green)',
+                        padding: '0 6px',
+                        minWidth: '18px',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {item.quantity}
+                    </span>
+                    <button
+                      onClick={() => onUpdateQty(item.product.id, item.selectedWeight, item.quantity + 1)}
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                        color: 'var(--blinkit-green)',
+                        fontWeight: 800,
+                        fontSize: '1rem',
+                        width: '28px',
+                        height: '30px',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        {/* Bill Details & Proceed to Pay */}
+        {/* Footer / Summary */}
         {cartItems.length > 0 && (
           <div
             style={{
               padding: '16px 20px',
-              borderTop: '1px solid var(--c-border)',
               backgroundColor: '#ffffff',
+              borderTop: '1px solid var(--c-border)',
+              boxShadow: '0 -4px 15px rgba(0, 0, 0, 0.05)',
             }}
           >
-            {/* Coupon Code Section */}
+            {/* Promo Code Input */}
             <form onSubmit={handleApplyCoupon} style={{ marginBottom: '14px' }}>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <div
@@ -294,6 +401,7 @@ export const CartDrawer = ({
                 </div>
                 <button
                   type="submit"
+                  disabled={isValidating}
                   style={{
                     backgroundColor: isCouponApplied ? 'var(--blinkit-green-light)' : '#1c1c1c',
                     color: isCouponApplied ? 'var(--blinkit-green)' : '#ffffff',
@@ -305,13 +413,13 @@ export const CartDrawer = ({
                     cursor: 'pointer',
                   }}
                 >
-                  {isCouponApplied ? 'Applied' : 'Apply'}
+                  {isValidating ? '...' : isCouponApplied ? 'Applied' : 'Apply'}
                 </button>
               </div>
 
               {isCouponApplied && (
                 <div style={{ fontSize: '0.725rem', color: 'var(--blinkit-green)', fontWeight: 800, marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Check size={13} /> Code 'BLINK15' applied! Saved ₹{discountAmount}
+                  <Check size={13} /> {couponMsg} (Saved ₹{discountAmount})
                 </div>
               )}
               {couponError && (
@@ -330,7 +438,7 @@ export const CartDrawer = ({
                 <span>Items total</span>
                 <span>₹{subtotal}</span>
               </div>
-              {isCouponApplied && (
+              {isCouponApplied && discountAmount > 0 && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--blinkit-green)', fontWeight: 800 }}>
                   <span>Coupon discount</span>
                   <span>-₹{discountAmount}</span>
@@ -358,7 +466,7 @@ export const CartDrawer = ({
 
             {/* Iconic Blinkit Proceed to Pay Button */}
             <button
-              onClick={() => onCheckout(isCouponApplied ? 'BLINK15' : '', finalTotal)}
+              onClick={() => onCheckout(isCouponApplied ? couponCode : '', finalTotal)}
               className="btn-blinkit-green"
               style={{
                 width: '100%',

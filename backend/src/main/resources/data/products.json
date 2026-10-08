@@ -1,0 +1,1169 @@
+[
+  {
+    "id": "california-almonds",
+    "name": "Nutritva Premium California Almonds",
+    "tagline": "100% Whole & Crunchy • Handpicked Grade A",
+    "category": "ALMONDS",
+    "categoryLabel": "Almonds (Badam)",
+    "badge": "BESTSELLER",
+    "rating": 4.9,
+    "reviewsCount": 1420,
+    "image": "/images/almonds.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 299,
+        "originalPrice": 399
+      },
+      {
+        "weight": "500g",
+        "price": 549,
+        "originalPrice": 749
+      },
+      {
+        "weight": "1kg",
+        "price": 999,
+        "originalPrice": 1399
+      }
+    ],
+    "description": "Directly sourced from the sun-drenched orchards of California. Naturally rich in vitamin E, high plant-protein, and dietary fiber. Zero chemical preservatives, adulteration-free tested.",
+    "ingredients": "100% Raw Whole California Almonds (Prunus dulcis).",
+    "benefits": [
+      "Supports brain health & memory",
+      "Rich in natural Vitamin E & antioxidants",
+      "Zero cholesterol & zero trans fats"
+    ],
+    "nutrition": {
+      "servingSize": "30g (approx 23 almonds)",
+      "calories": 164,
+      "protein": "6.0g",
+      "dietaryFiber": "3.5g",
+      "healthyFats": "14.0g"
+    }
+  },
+  {
+    "id": "organic-mamra-almonds",
+    "name": "Nutritva Authentic Mamra Badam",
+    "tagline": "High Natural Oil Content • Concave Iranian Shape",
+    "category": "ALMONDS",
+    "categoryLabel": "Almonds (Badam)",
+    "badge": "PREMIUM ROYALE",
+    "rating": 4.9,
+    "reviewsCount": 680,
+    "image": "/images/almonds.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 699,
+        "originalPrice": 899
+      },
+      {
+        "weight": "500g",
+        "price": 1299,
+        "originalPrice": 1699
+      }
+    ],
+    "description": "100% authentic Mamra almonds with superior natural oil concentration (approx 50%). Known for their unique boat-like shape and unmatched cognitive nourishment.",
+    "ingredients": "100% Pure Raw Mamra Almonds.",
+    "benefits": [
+      "Highest natural oil content among almonds",
+      "Boosts memory & neurological functions",
+      "Organically cultivated without chemicals"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 180,
+      "protein": "6.5g",
+      "dietaryFiber": "3.8g",
+      "healthyFats": "15.2g"
+    }
+  },
+  {
+    "id": "jumbo-cashews-w240",
+    "name": "Nutritva W240 King Jumbo Cashews",
+    "tagline": "Whole Creamy Cashews • Slow Roasted with Pink Salt",
+    "category": "CASHEWS",
+    "categoryLabel": "Cashews (Kaju)",
+    "badge": "CHEF CHOICE",
+    "rating": 4.9,
+    "reviewsCount": 864,
+    "image": "/images/cashews.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 349,
+        "originalPrice": 449
+      },
+      {
+        "weight": "500g",
+        "price": 649,
+        "originalPrice": 849
+      },
+      {
+        "weight": "1kg",
+        "price": 1199,
+        "originalPrice": 1599
+      }
+    ],
+    "description": "Extra-large W240 grade cashews sourced from pristine coastal farms. Naturally sweet, buttery texture, and gently tossed in mineral-rich Himalayan pink salt.",
+    "ingredients": "100% Whole Grade W240 Cashews, Himalayan Pink Salt.",
+    "benefits": [
+      "Rich in heart-friendly monounsaturated fats",
+      "Great source of zinc and copper",
+      "Natural buttery sweetness"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 157,
+      "protein": "5.2g",
+      "dietaryFiber": "1.0g",
+      "healthyFats": "12.4g"
+    }
+  },
+  {
+    "id": "roasted-salted-cashews-w320",
+    "name": "Nutritva Roasted & Salted Cashews W320",
+    "tagline": "Golden Oven Roasted • Light Sea Salt Toss",
+    "category": "CASHEWS",
+    "categoryLabel": "Cashews (Kaju)",
+    "badge": "PARTY SNACK",
+    "rating": 4.8,
+    "reviewsCount": 520,
+    "image": "/images/cashews.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 279,
+        "originalPrice": 349
+      },
+      {
+        "weight": "500g",
+        "price": 599,
+        "originalPrice": 799
+      }
+    ],
+    "description": "Perfect whole W320 cashew nuts oven-roasted to golden crunchiness with a touch of pure sea salt. No artificial colors or preservatives.",
+    "ingredients": "Cashews (W320), Edible Sea Salt, Cold-Pressed Olive Oil.",
+    "benefits": [
+      "Crispy roasted texture",
+      "Zero palm oil",
+      "Rich in essential minerals"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 160,
+      "protein": "5.0g",
+      "dietaryFiber": "1.2g",
+      "healthyFats": "12.8g"
+    }
+  },
+  {
+    "id": "iranian-pistachios-roasted",
+    "name": "Nutritva Roasted & Salted Iranian Pistachios",
+    "tagline": "Naturally Cracked In-Shell • Jumbo Akbari Grade",
+    "category": "PISTACHIOS",
+    "categoryLabel": "Pistachios (Pista)",
+    "badge": "TOP TRENDING",
+    "rating": 4.9,
+    "reviewsCount": 780,
+    "image": "/images/pistachios.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 349,
+        "originalPrice": 449
+      },
+      {
+        "weight": "500g",
+        "price": 799,
+        "originalPrice": 1049
+      }
+    ],
+    "description": "Plump Iranian pistachios with natural smiling shells. Gently hot-air roasted and lightly seasoned with sea salt. Easy to crack and delicious to munch.",
+    "ingredients": "In-Shell Iranian Pistachios, Sea Salt.",
+    "benefits": [
+      "High in dietary antioxidants lutein & zeaxanthin",
+      "Promotes eye health",
+      "Supports weight management with mindful shelling"
+    ],
+    "nutrition": {
+      "servingSize": "30g (approx 49 kernels)",
+      "calories": 159,
+      "protein": "5.7g",
+      "dietaryFiber": "3.0g",
+      "healthyFats": "12.8g"
+    }
+  },
+  {
+    "id": "raw-green-pista-kernels",
+    "name": "Nutritva Raw Emerald Pistachio Kernels",
+    "tagline": "Shelled Green Kernels • For Mithai & Healthy Bowls",
+    "category": "PISTACHIOS",
+    "categoryLabel": "Pistachios (Pista)",
+    "badge": "100% NATURAL",
+    "rating": 4.8,
+    "reviewsCount": 340,
+    "image": "/images/pistachios.jpg",
+    "weightOptions": [
+      {
+        "weight": "150g",
+        "price": 399,
+        "originalPrice": 499
+      },
+      {
+        "weight": "300g",
+        "price": 749,
+        "originalPrice": 949
+      }
+    ],
+    "description": "100% shelled emerald-green pistachio kernels without shells or added salt. Perfect for breakfast bowls, smoothies, kheer, and baking.",
+    "ingredients": "100% Raw Shelled Pistachio Kernels.",
+    "benefits": [
+      "Zero added sodium",
+      "Vibrant natural chlorophyll & antioxidants",
+      "High vegetable protein"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 161,
+      "protein": "6.0g",
+      "dietaryFiber": "2.9g",
+      "healthyFats": "13.0g"
+    }
+  },
+  {
+    "id": "kashmiri-walnuts-inshell",
+    "name": "Nutritva Snow-Fed Kashmiri Walnut Kernels",
+    "tagline": "Extra Light Halves • High Natural Oil Content",
+    "category": "WALNUTS",
+    "categoryLabel": "Walnuts (Akhrot)",
+    "badge": "100% PURE",
+    "rating": 4.9,
+    "reviewsCount": 512,
+    "image": "/images/walnuts.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 389,
+        "originalPrice": 499
+      },
+      {
+        "weight": "500g",
+        "price": 699,
+        "originalPrice": 899
+      }
+    ],
+    "description": "Harvested from high-altitude valleys in Kashmir. Packed with brain-boosting plant ALA Omega-3s. No bleaching, natural golden color.",
+    "ingredients": "100% Raw Kashmiri Walnut Kernels (Juglans regia).",
+    "benefits": [
+      "Highest plant ALA Omega-3 among nuts",
+      "Promotes optimal heart & vascular health",
+      "Unbleached natural kernels"
+    ],
+    "nutrition": {
+      "servingSize": "30g (approx 7 halves)",
+      "calories": 185,
+      "protein": "4.3g",
+      "dietaryFiber": "2.0g",
+      "healthyFats": "18.5g"
+    }
+  },
+  {
+    "id": "chilean-whole-walnuts",
+    "name": "Nutritva Jumbo In-Shell Chilean Walnuts",
+    "tagline": "Thin Shell • Easy Hand Crack • Fresh Harvest",
+    "category": "WALNUTS",
+    "categoryLabel": "Walnuts (Akhrot)",
+    "badge": "FARM FRESH",
+    "rating": 4.7,
+    "reviewsCount": 390,
+    "image": "/images/walnuts.jpg",
+    "weightOptions": [
+      {
+        "weight": "500g",
+        "price": 399,
+        "originalPrice": 549
+      },
+      {
+        "weight": "1kg",
+        "price": 749,
+        "originalPrice": 999
+      }
+    ],
+    "description": "Thin-shelled Chilean walnuts that crack easily with a gentle press. Protects the delicate walnut kernel oils from oxidation until you crack them.",
+    "ingredients": "100% Whole In-Shell Chilean Walnuts.",
+    "benefits": [
+      "Maximum freshness preserved inside shell",
+      "Rich in natural polyphenols",
+      "Fun and mindful snacking ritual"
+    ],
+    "nutrition": {
+      "servingSize": "30g edible portion",
+      "calories": 182,
+      "protein": "4.2g",
+      "dietaryFiber": "2.1g",
+      "healthyFats": "18.0g"
+    }
+  },
+  {
+    "id": "afghan-green-raisins",
+    "name": "Nutritva Long Afghan Green Raisins (Kishmish)",
+    "tagline": "Naturally Sweet • Sundried • Seedless Long Kernels",
+    "category": "RAISINS",
+    "categoryLabel": "Raisins (Kishmish)",
+    "badge": "NATURAL ENERGY",
+    "rating": 4.8,
+    "reviewsCount": 610,
+    "image": "/images/raisins.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 189,
+        "originalPrice": 249
+      },
+      {
+        "weight": "500g",
+        "price": 349,
+        "originalPrice": 449
+      }
+    ],
+    "description": "Slender, golden-green Afghan raisins naturally dried under shade. Naturally sweet without any added sugars, sulfur, or artificial polishing.",
+    "ingredients": "100% Naturally Dried Afghan Green Raisins.",
+    "benefits": [
+      "Natural iron booster",
+      "Aids digestion and gut motility",
+      "Instant workout fuel"
+    ],
+    "nutrition": {
+      "servingSize": "40g",
+      "calories": 120,
+      "protein": "1.3g",
+      "dietaryFiber": "1.9g",
+      "healthyFats": "0.2g"
+    }
+  },
+  {
+    "id": "seedless-black-raisins",
+    "name": "Nutritva Jumbo Black Raisins (Kishmish)",
+    "tagline": "Seedless • Rich in Iron & Antioxidants",
+    "category": "RAISINS",
+    "categoryLabel": "Raisins (Kishmish)",
+    "badge": "HEALTH ELIXIR",
+    "rating": 4.8,
+    "reviewsCount": 440,
+    "image": "/images/raisins.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 219,
+        "originalPrice": 289
+      },
+      {
+        "weight": "500g",
+        "price": 399,
+        "originalPrice": 519
+      }
+    ],
+    "description": "Large, plump seedless black raisins soaked overnight or enjoyed as a wholesome evening snack. Great for boosting hemoglobin and improving digestion.",
+    "ingredients": "100% Naturally Dried Seedless Black Raisins.",
+    "benefits": [
+      "Rich in natural iron & vitamin C",
+      "Supports healthy hemoglobin levels",
+      "Zero added sugar"
+    ],
+    "nutrition": {
+      "servingSize": "40g",
+      "calories": 125,
+      "protein": "1.4g",
+      "dietaryFiber": "2.2g",
+      "healthyFats": "0.2g"
+    }
+  },
+  {
+    "id": "medjool-royal-dates",
+    "name": "Nutritva Arabian Royal Medjool Dates",
+    "tagline": "Caramel Soft • Zero Added Sugar • Energy Booster",
+    "category": "DATES",
+    "categoryLabel": "Dates (Khajur)",
+    "badge": "NATURAL SWEET",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "image": "/images/dates.jpg",
+    "weightOptions": [
+      {
+        "weight": "500g",
+        "price": 449,
+        "originalPrice": 599
+      },
+      {
+        "weight": "1kg",
+        "price": 849,
+        "originalPrice": 1099
+      }
+    ],
+    "description": "Large, succulent Medjool dates with an unctuous caramel flesh. Naturally sweet, rich in potassium, iron, and slow-releasing energy.",
+    "ingredients": "100% Natural Whole Pitted Medjool Dates.",
+    "benefits": [
+      "Natural pre-workout energy booster",
+      "Rich in iron, potassium & copper",
+      "Guilt-free alternative to refined sugar"
+    ],
+    "nutrition": {
+      "servingSize": "40g (2 dates)",
+      "calories": 110,
+      "protein": "1.0g",
+      "dietaryFiber": "3.0g",
+      "healthyFats": "0.2g"
+    }
+  },
+  {
+    "id": "original-ajwa-dates-madinah",
+    "name": "Nutritva Original Ajwa Dates Al-Madinah",
+    "tagline": "Soft Black Dates • Revered Superfood from Madinah",
+    "category": "DATES",
+    "categoryLabel": "Dates (Khajur)",
+    "badge": "SACRED HERITAGE",
+    "rating": 5,
+    "reviewsCount": 395,
+    "image": "/images/dates.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 499,
+        "originalPrice": 649
+      },
+      {
+        "weight": "500g",
+        "price": 949,
+        "originalPrice": 1199
+      }
+    ],
+    "description": "Authentic Ajwa dates directly imported from the historic groves of Al-Madinah. Fine texture, mild sweetness, and celebrated medicinal value.",
+    "ingredients": "100% Authentic Ajwa Dates.",
+    "benefits": [
+      "Rich in heart-protective flavonoids",
+      "Natural energizer for daily vitality",
+      "Soft melt-in-mouth texture"
+    ],
+    "nutrition": {
+      "servingSize": "40g (3 dates)",
+      "calories": 115,
+      "protein": "1.2g",
+      "dietaryFiber": "3.2g",
+      "healthyFats": "0.1g"
+    }
+  },
+  {
+    "id": "turkish-anjeer-figs",
+    "name": "Nutritva Jumbo Turkish Dried Figs (Anjeer)",
+    "tagline": "Garland Packed • Soft Honey Sweetness • High Calcium",
+    "category": "DRIED_FRUITS",
+    "categoryLabel": "Dried Fruits",
+    "badge": "SUPERFOOD",
+    "rating": 4.9,
+    "reviewsCount": 560,
+    "image": "/images/figs.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 399,
+        "originalPrice": 519
+      },
+      {
+        "weight": "500g",
+        "price": 749,
+        "originalPrice": 999
+      }
+    ],
+    "description": "Golden, round sun-ripened Turkish figs with crunchy seeds and soft fleshy center. Packed with plant calcium, dietary fiber, and natural potassium.",
+    "ingredients": "100% Naturally Dried Turkish Figs.",
+    "benefits": [
+      "Exceptional natural dietary fiber for gut health",
+      "High plant calcium for strong bones",
+      "Naturally sweet without syrup"
+    ],
+    "nutrition": {
+      "servingSize": "40g (2 figs)",
+      "calories": 105,
+      "protein": "1.4g",
+      "dietaryFiber": "3.9g",
+      "healthyFats": "0.4g"
+    }
+  },
+  {
+    "id": "dried-apricots-cranberries",
+    "name": "Nutritva Whole Dried Apricots & Cranberries",
+    "tagline": "Sun-Dried Turkish Apricots & Wild Cranberries",
+    "category": "DRIED_FRUITS",
+    "categoryLabel": "Dried Fruits",
+    "badge": "TART & SWEET",
+    "rating": 4.8,
+    "reviewsCount": 310,
+    "image": "/images/figs.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 289,
+        "originalPrice": 379
+      },
+      {
+        "weight": "400g",
+        "price": 549,
+        "originalPrice": 699
+      }
+    ],
+    "description": "Succulent plump Turkish dried apricots paired with tangy whole wild cranberries. Packed with vitamin A, iron, and bladder-supportive proanthocyanidins.",
+    "ingredients": "Dried Apricots, Whole Dried Cranberries, Organic Sunflower Oil.",
+    "benefits": [
+      "Rich in vitamin A for skin & eye health",
+      "Immunity supporting antioxidants",
+      "Zero artificial colors"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 98,
+      "protein": "1.1g",
+      "dietaryFiber": "2.4g",
+      "healthyFats": "0.2g"
+    }
+  },
+  {
+    "id": "super-seeds-berries-mix",
+    "name": "Nutritva 7-in-1 Super Seeds & Berries Mix",
+    "tagline": "Chia, Flax, Pumpkin, Sunflower & Dried Cranberries",
+    "category": "SEEDS",
+    "categoryLabel": "Seeds",
+    "badge": "SUPERFOOD",
+    "rating": 4.8,
+    "reviewsCount": 740,
+    "image": "/images/seeds.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 249,
+        "originalPrice": 349
+      },
+      {
+        "weight": "400g",
+        "price": 449,
+        "originalPrice": 599
+      }
+    ],
+    "description": "A vibrant power-packed blend of lightly roasted pumpkin seeds, chia seeds, golden flax, sunflower seeds, and whole dried wild cranberries.",
+    "ingredients": "Pumpkin Seeds, Sunflower Seeds, Flax Seeds, Chia Seeds, Watermelon Seeds, Dried Cranberries, Black Raisins.",
+    "benefits": [
+      "High Omega-3 fatty acids for hair & skin",
+      "Excellent digestive fiber",
+      "Boosts energy without sugar spike"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 142,
+      "protein": "5.8g",
+      "dietaryFiber": "4.2g",
+      "healthyFats": "9.6g"
+    }
+  },
+  {
+    "id": "raw-chia-pumpkin-seeds",
+    "name": "Nutritva Roasted Pumpkin & Raw Chia Duo",
+    "tagline": "Zinc Rich Pumpkin Seeds & Protein Chia Duo",
+    "category": "SEEDS",
+    "categoryLabel": "Seeds",
+    "badge": "CLEAN FUEL",
+    "rating": 4.7,
+    "reviewsCount": 410,
+    "image": "/images/seeds.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 229,
+        "originalPrice": 299
+      },
+      {
+        "weight": "500g",
+        "price": 419,
+        "originalPrice": 549
+      }
+    ],
+    "description": "Crispy lightly salted pumpkin seeds combined with raw whole black chia seeds. Add to yogurts, smoothies, or salads for a daily zinc boost.",
+    "ingredients": "Pumpkin Seeds, Black Chia Seeds, Himalayan Salt.",
+    "benefits": [
+      "High zinc for immunity & prostate health",
+      "Rich plant protein",
+      "Low carbohydrate index"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 150,
+      "protein": "6.2g",
+      "dietaryFiber": "3.9g",
+      "healthyFats": "10.5g"
+    }
+  },
+  {
+    "id": "macadamia-brazil-nuts",
+    "name": "Nutritva Roasted Macadamia & Brazil Nuts",
+    "tagline": "Selenium Powerhouse • Rich Creamy Australian Macadamias",
+    "category": "EXOTIC_NUTS",
+    "categoryLabel": "Exotic Nuts",
+    "badge": "LUXURY EXOTIC",
+    "rating": 4.9,
+    "reviewsCount": 290,
+    "image": "/images/macadamia.jpg",
+    "weightOptions": [
+      {
+        "weight": "150g",
+        "price": 499,
+        "originalPrice": 649
+      },
+      {
+        "weight": "300g",
+        "price": 899,
+        "originalPrice": 1199
+      }
+    ],
+    "description": "A luxurious pairing of buttery Australian macadamia nuts and wild Amazonian Brazil nuts. Just two Brazil nuts provide 100% of your daily selenium requirement.",
+    "ingredients": "Whole Macadamia Nuts, Amazonian Brazil Nuts.",
+    "benefits": [
+      "World’s richest natural food source of selenium",
+      "Supports healthy thyroid metabolism",
+      "Ultra-buttery crunch without guilt"
+    ],
+    "nutrition": {
+      "servingSize": "25g",
+      "calories": 175,
+      "protein": "3.6g",
+      "dietaryFiber": "2.1g",
+      "healthyFats": "17.5g"
+    }
+  },
+  {
+    "id": "hazelnuts-pecans",
+    "name": "Nutritva Whole Hazelnuts & Pecan Kernels",
+    "tagline": "Oven Roasted • Aromatic Nutty Crunch",
+    "category": "EXOTIC_NUTS",
+    "categoryLabel": "Exotic Nuts",
+    "badge": "GOURMET",
+    "rating": 4.8,
+    "reviewsCount": 240,
+    "image": "/images/hazelnuts.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 449,
+        "originalPrice": 579
+      },
+      {
+        "weight": "400g",
+        "price": 849,
+        "originalPrice": 1099
+      }
+    ],
+    "description": "Crispy whole roasted hazelnuts and sweet pecan halves. Unbeatable earthy aroma, perfect for gourmet breakfast platters and mindful snacking.",
+    "ingredients": "100% Whole Roasted Hazelnuts, Pecan Halves.",
+    "benefits": [
+      "High in vitamin E & manganese",
+      "Delicious naturally sweet aroma",
+      "Heart-healthy mono-fats"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 182,
+      "protein": "4.0g",
+      "dietaryFiber": "2.7g",
+      "healthyFats": "18.1g"
+    }
+  },
+  {
+    "id": "roasted-peri-peri-makhana",
+    "name": "Nutritva Roasted Makhana — Spicy Peri Peri",
+    "tagline": "Slow Roasted in Olive Oil • Zero Palm Oil",
+    "category": "MAKHANA",
+    "categoryLabel": "Makhana",
+    "badge": "TOP TRENDING",
+    "rating": 4.8,
+    "reviewsCount": 980,
+    "image": "/images/makhana.jpg",
+    "weightOptions": [
+      {
+        "weight": "100g",
+        "price": 149,
+        "originalPrice": 199
+      },
+      {
+        "weight": "250g (Pack of 3)",
+        "price": 399,
+        "originalPrice": 549
+      },
+      {
+        "weight": "500g Mega Saver",
+        "price": 699,
+        "originalPrice": 949
+      }
+    ],
+    "description": "Crispy popped lotus seeds infused with fiery African bird-eye peri peri chillies, garlic, and sea salt. Gently roasted without a single drop of palm oil. The ultimate guilt-free 4 PM crunch.",
+    "ingredients": "Fox Nuts (Makhana), Cold Pressed Olive Oil, Peri Peri Seasoning (Chilli, Garlic, Onion, Black Salt, Oregano).",
+    "benefits": [
+      "Low calorie & guilt-free crunch",
+      "High calcium & plant magnesium",
+      "Roasted, never deep fried"
+    ],
+    "nutrition": {
+      "servingSize": "25g",
+      "calories": 110,
+      "protein": "3.2g",
+      "dietaryFiber": "2.8g",
+      "healthyFats": "3.1g"
+    }
+  },
+  {
+    "id": "cream-onion-makhana",
+    "name": "Nutritva Roasted Makhana — Cream & Onion",
+    "tagline": "Savory Herb Blend • Slow Roasted Fox Nuts",
+    "category": "MAKHANA",
+    "categoryLabel": "Makhana",
+    "badge": "KIDS FAVORITE",
+    "rating": 4.7,
+    "reviewsCount": 620,
+    "image": "/images/makhana.jpg",
+    "weightOptions": [
+      {
+        "weight": "100g",
+        "price": 149,
+        "originalPrice": 199
+      },
+      {
+        "weight": "250g (Pack of 3)",
+        "price": 399,
+        "originalPrice": 549
+      }
+    ],
+    "description": "Smooth sour cream flavor paired with fragrant spring onions and a touch of white pepper on crispy popped lotus seeds. Wholesome movie night snacking.",
+    "ingredients": "Fox Nuts (Makhana), Olive Oil, Milk Solids, Onion Powder, Parsley, Chives, Himalayan Salt.",
+    "benefits": [
+      "Zero palm oil guarantee",
+      "Light & airy snacking crunch",
+      "Rich in natural antioxidants"
+    ],
+    "nutrition": {
+      "servingSize": "25g",
+      "calories": 112,
+      "protein": "3.0g",
+      "dietaryFiber": "2.5g",
+      "healthyFats": "3.2g"
+    }
+  },
+  {
+    "id": "phool-makhana-raw-jumbo",
+    "name": "Nutritva Jumbo Raw Phool Makhana (Fox Nuts)",
+    "tagline": "Hand-Sorted 6-Suta Grade • 100% Bihar Harvest",
+    "category": "MAKHANA",
+    "categoryLabel": "Makhana",
+    "badge": "RAW & PURE",
+    "rating": 4.9,
+    "reviewsCount": 780,
+    "image": "/images/makhana.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 279,
+        "originalPrice": 349
+      },
+      {
+        "weight": "500g",
+        "price": 529,
+        "originalPrice": 699
+      }
+    ],
+    "description": "Premium handpicked 6-suta jumbo fox nuts harvested from the pristine lotus ponds of Mithila, Bihar. Clean, white, and unbleached.",
+    "ingredients": "100% Raw Popped Fox Nuts (Euryale ferox).",
+    "benefits": [
+      "Roast at home in your choice of ghee/oil",
+      "High in calcium & potassium",
+      "Ancient Ayurvedic satvik snack"
+    ],
+    "nutrition": {
+      "servingSize": "25g",
+      "calories": 95,
+      "protein": "3.5g",
+      "dietaryFiber": "3.0g",
+      "healthyFats": "0.4g"
+    }
+  },
+  {
+    "id": "panchmeva-health-mix",
+    "name": "Nutritva Traditional Panchmeva Super Mix",
+    "tagline": "Almonds, Cashews, Walnuts, Dry Dates & Golden Raisins",
+    "category": "MIXED_DRY_FRUITS",
+    "categoryLabel": "Mixed Dry Fruits",
+    "badge": "AYURVEDIC BLEND",
+    "rating": 4.9,
+    "reviewsCount": 880,
+    "image": "/images/hampers.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 349,
+        "originalPrice": 449
+      },
+      {
+        "weight": "500g",
+        "price": 649,
+        "originalPrice": 849
+      },
+      {
+        "weight": "1kg",
+        "price": 1199,
+        "originalPrice": 1599
+      }
+    ],
+    "description": "The sacred Ayurvedic blend of five revered dry fruits: California Almonds, W240 Cashews, Kashmiri Walnuts, Dry Khajoor, and Afghan Green Kishmish.",
+    "ingredients": "Almonds, Cashews, Walnuts, Dried Dates, Green Raisins in equal proportions.",
+    "benefits": [
+      "Complete balanced daily vitality",
+      "Rich in natural micro-nutrients",
+      "Ideal for morning pujas & pre-workout"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 145,
+      "protein": "4.5g",
+      "dietaryFiber": "2.8g",
+      "healthyFats": "10.5g"
+    }
+  },
+  {
+    "id": "royal-daily-nut-mix",
+    "name": "Nutritva Royal 4-Nut Daily Energy Mix",
+    "tagline": "California Almonds, Jumbo Cashews, Walnuts & Salted Pistas",
+    "category": "MIXED_DRY_FRUITS",
+    "categoryLabel": "Mixed Dry Fruits",
+    "badge": "DAILY ESSENTIAL",
+    "rating": 4.8,
+    "reviewsCount": 540,
+    "image": "/images/hampers.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 389,
+        "originalPrice": 499
+      },
+      {
+        "weight": "500g",
+        "price": 729,
+        "originalPrice": 949
+      }
+    ],
+    "description": "Wholesome handful of the four king nuts. Specially balanced for sustained energy, mental alertness, and healthy cholesterol balance.",
+    "ingredients": "Almonds, Cashews, Walnuts, Pistachios.",
+    "benefits": [
+      "Sustained release energy",
+      "High vegetable protein & healthy HDL fats",
+      "Zero refined sugar"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 165,
+      "protein": "5.4g",
+      "dietaryFiber": "2.6g",
+      "healthyFats": "14.2g"
+    }
+  },
+  {
+    "id": "tandoori-masala-cashews",
+    "name": "Nutritva Tandoori Tikka Roasted Cashews",
+    "tagline": "Smoky Charcoal Flavour • Hand Tossed in Indian Spices",
+    "category": "ROASTED_FLAVOURED",
+    "categoryLabel": "Roasted & Flavoured",
+    "badge": "SPICY HIT",
+    "rating": 4.8,
+    "reviewsCount": 460,
+    "image": "/images/cashews.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 299,
+        "originalPrice": 389
+      },
+      {
+        "weight": "400g",
+        "price": 549,
+        "originalPrice": 719
+      }
+    ],
+    "description": "Whole jumbo cashews marinated with aromatic clay-oven tandoori spices, dry kasuri methi, and Himalayan black salt. Roasted without frying.",
+    "ingredients": "Cashews, Cold-Pressed Mustard Oil, Tandoori Masala Blend, Himalayan Salt.",
+    "benefits": [
+      "Zero palm oil guarantee",
+      "Authentic Indian spice hit",
+      "High magnesium & zinc"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 158,
+      "protein": "5.1g",
+      "dietaryFiber": "1.4g",
+      "healthyFats": "12.5g"
+    }
+  },
+  {
+    "id": "smoked-bbq-almonds",
+    "name": "Nutritva Hickory Smoked BBQ Almonds",
+    "tagline": "Woodfire Smoked • Sweet & Tangy Paprika Glaze",
+    "category": "ROASTED_FLAVOURED",
+    "categoryLabel": "Roasted & Flavoured",
+    "badge": "CRUNCH SPECIAL",
+    "rating": 4.7,
+    "reviewsCount": 380,
+    "image": "/images/almonds.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 289,
+        "originalPrice": 369
+      },
+      {
+        "weight": "400g",
+        "price": 529,
+        "originalPrice": 699
+      }
+    ],
+    "description": "Crunchy California almonds infused with natural hickory woodsmoke, Spanish smoked paprika, and raw cane sugar. Irresistible evening crunch.",
+    "ingredients": "Almonds, Smoked Paprika, Cane Sugar, Sea Salt, Natural Hickory Smoke Flavor.",
+    "benefits": [
+      "Rich smoky crunch",
+      "Loaded with Vitamin E",
+      "Zero artificial colors"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 162,
+      "protein": "5.8g",
+      "dietaryFiber": "3.2g",
+      "healthyFats": "13.6g"
+    }
+  },
+  {
+    "id": "energy-booster-trail-mix",
+    "name": "Nutritva Athlete Gym Trail Mix",
+    "tagline": "High Protein Blend • Almonds, Seeds, Cranberries & Dark Chocolate",
+    "category": "TRAIL_MIX",
+    "categoryLabel": "Trail Mix & Healthy Snacks",
+    "badge": "FITNESS FUEL",
+    "rating": 4.9,
+    "reviewsCount": 650,
+    "image": "/images/hampers.jpg",
+    "weightOptions": [
+      {
+        "weight": "250g",
+        "price": 299,
+        "originalPrice": 399
+      },
+      {
+        "weight": "500g",
+        "price": 549,
+        "originalPrice": 749
+      }
+    ],
+    "description": "Engineered for gym buffs and active days. Packed with whole almonds, pumpkin seeds, watermelon seeds, dried cranberries, and 70% dark chocolate drops.",
+    "ingredients": "Roasted Almonds, Pumpkin Seeds, Watermelon Seeds, Dried Cranberries, Dark Chocolate Drops (70% Cacao).",
+    "benefits": [
+      "Clean workout stamina",
+      "Rich in natural magnesium to curb muscle cramps",
+      "Delicious balance of crunch & berry chew"
+    ],
+    "nutrition": {
+      "servingSize": "35g",
+      "calories": 168,
+      "protein": "6.5g",
+      "dietaryFiber": "3.8g",
+      "healthyFats": "11.8g"
+    }
+  },
+  {
+    "id": "fruit-nut-trail-mix",
+    "name": "Nutritva Antioxidant Fruit & Nut Crunch Mix",
+    "tagline": "Cashews, Walnuts, Golden Raisins, Figs & Blueberries",
+    "category": "TRAIL_MIX",
+    "categoryLabel": "Trail Mix & Healthy Snacks",
+    "badge": "CLEAN SNACK",
+    "rating": 4.8,
+    "reviewsCount": 430,
+    "image": "/images/hampers.jpg",
+    "weightOptions": [
+      {
+        "weight": "200g",
+        "price": 269,
+        "originalPrice": 349
+      },
+      {
+        "weight": "400g",
+        "price": 499,
+        "originalPrice": 649
+      }
+    ],
+    "description": "A soothing mix of creamy cashews, Brain-boosting walnuts, sun-dried figs, and plump blueberries. Perfect for an afternoon study or work break.",
+    "ingredients": "Cashews, Walnuts, Dried Figs, Dried Blueberries, Green Raisins.",
+    "benefits": [
+      "Zero added table sugar",
+      "High cellular antioxidant shield",
+      "Natural sweet-savory harmony"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 140,
+      "protein": "4.2g",
+      "dietaryFiber": "3.0g",
+      "healthyFats": "9.8g"
+    }
+  },
+  {
+    "id": "royal-wellness-gift-box",
+    "name": "Nutritva Royal Festive Dry Fruit Hamper 🎁",
+    "tagline": "Luxury Box with Almonds, Cashews, Makhana & Raisins",
+    "category": "GIFT_HAMPERS",
+    "categoryLabel": "Gift Hampers 🎁",
+    "badge": "FESTIVE SPECIAL",
+    "rating": 5,
+    "reviewsCount": 380,
+    "image": "/images/hampers.jpg",
+    "weightOptions": [
+      {
+        "weight": "1kg Gift Set",
+        "price": 1299,
+        "originalPrice": 1799
+      },
+      {
+        "weight": "1.5kg Luxury Box",
+        "price": 1899,
+        "originalPrice": 2499
+      }
+    ],
+    "description": "An artisanal gold-embossed gift box featuring Nutritva California Almonds (250g), W240 Cashews (250g), Peri Peri Makhana (100g), and Afghan Green Raisins (250g). Perfect for weddings, Diwali, and corporate gifting.",
+    "ingredients": "Almonds, Cashews, Peri Peri Makhana, Afghan Raisins.",
+    "benefits": [
+      "Luxury gift packaging with magnetic clasp",
+      "100% vacuum-sealed freshness",
+      "Complimentary custom greeting card"
+    ],
+    "nutrition": {
+      "servingSize": "30g assortment",
+      "calories": 155,
+      "protein": "4.8g",
+      "dietaryFiber": "2.5g",
+      "healthyFats": "12.0g"
+    }
+  },
+  {
+    "id": "celebration-wooden-hamper",
+    "name": "Nutritva Celebration Heritage Wooden Box 🎁",
+    "tagline": "Handcrafted Wooden Chest with 4 Glass Jars of Premium Nuts",
+    "category": "GIFT_HAMPERS",
+    "categoryLabel": "Gift Hampers 🎁",
+    "badge": "VIP LUXURY",
+    "rating": 5,
+    "reviewsCount": 220,
+    "image": "/images/hampers.jpg",
+    "weightOptions": [
+      {
+        "weight": "800g (4 Jars)",
+        "price": 1499,
+        "originalPrice": 1999
+      },
+      {
+        "weight": "1.2kg (4 Large Jars)",
+        "price": 2199,
+        "originalPrice": 2899
+      }
+    ],
+    "description": "A reusable handcrafted wooden box fitted with 4 airtight gold-rimmed glass jars containing Jumbo California Almonds, King W240 Cashews, Salted Iranian Pistachios, and Turkish Dried Figs.",
+    "ingredients": "Almonds, Cashews, Pistachios, Turkish Figs.",
+    "benefits": [
+      "Reusable artisanal wooden treasure box",
+      "Zero plastic eco-friendly packaging",
+      "Impressive premium presentation"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 160,
+      "protein": "5.2g",
+      "dietaryFiber": "2.8g",
+      "healthyFats": "13.0g"
+    }
+  },
+  {
+    "id": "family-snacking-combo",
+    "name": "Nutritva Daily Snacking Super Saver Combo",
+    "tagline": "California Almonds (500g) + Jumbo Cashews (500g) + Makhana (250g)",
+    "category": "COMBOS_OFFERS",
+    "categoryLabel": "Combos & Offers",
+    "badge": "SAVE 35%",
+    "rating": 4.9,
+    "reviewsCount": 920,
+    "image": "/images/hero_banner.jpg",
+    "weightOptions": [
+      {
+        "weight": "1.25kg Mega Pack",
+        "price": 1199,
+        "originalPrice": 1799
+      },
+      {
+        "weight": "2.5kg Family Pack",
+        "price": 2199,
+        "originalPrice": 3299
+      }
+    ],
+    "description": "The ultimate monthly pantry restock combo for the whole family. Save over 35% compared to purchasing single packs.",
+    "ingredients": "California Almonds, W240 Cashews, Roasted Peri Peri Makhana.",
+    "benefits": [
+      "Maximum savings on monthly staple dry fruits",
+      "Pantry-ready zip lock pouches",
+      "Free priority doorstep delivery"
+    ],
+    "nutrition": {
+      "servingSize": "30g",
+      "calories": 158,
+      "protein": "5.2g",
+      "dietaryFiber": "2.9g",
+      "healthyFats": "13.0g"
+    }
+  },
+  {
+    "id": "makhana-party-trio",
+    "name": "Nutritva 3-Flavour Roasted Makhana Trio",
+    "tagline": "Peri Peri + Cream & Onion + Pudina Mint (100g each)",
+    "category": "COMBOS_OFFERS",
+    "categoryLabel": "Combos & Offers",
+    "badge": "SUPER COMBO",
+    "rating": 4.8,
+    "reviewsCount": 710,
+    "image": "/images/makhana.jpg",
+    "weightOptions": [
+      {
+        "weight": "300g (3 Packs)",
+        "price": 399,
+        "originalPrice": 597
+      },
+      {
+        "weight": "600g (6 Packs)",
+        "price": 749,
+        "originalPrice": 1194
+      }
+    ],
+    "description": "Try all of our best-selling roasted lotus seed flavours! Spicy African Peri Peri, savory American Cream & Onion, and refreshing Desi Pudina Mint. Slow roasted in pure olive oil.",
+    "ingredients": "Fox Nuts (Makhana), Olive Oil, Natural Flavours & Spices.",
+    "benefits": [
+      "Zero palm oil guarantee",
+      "Variety of 3 crowd-favorite flavours",
+      "Value price per pack"
+    ],
+    "nutrition": {
+      "servingSize": "25g",
+      "calories": 110,
+      "protein": "3.1g",
+      "dietaryFiber": "2.7g",
+      "healthyFats": "3.1g"
+    }
+  }
+]

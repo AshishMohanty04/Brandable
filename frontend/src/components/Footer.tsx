@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { Zap } from 'lucide-react';
+import { api } from '../services/api';
 
 export const Footer = () => {
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSendLink = (e: React.FormEvent) => {
+  const handleSendLink = async (e: React.FormEvent) => {
     e.preventDefault();
     if (phone.trim()) {
+      await api.subscribeNewsletter(`${phone.trim()}@sms.nutritva.com`);
       setSubmitted(true);
     }
   };
