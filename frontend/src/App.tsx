@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { CartItem, Product, ProductCategory, OrderDTO } from './types/product';
+import type { UserDTO } from './types/auth';
 import { PRODUCTS } from './data/products';
 import { api } from './services/api';
 import { Navbar } from './components/Navbar';
@@ -12,6 +13,8 @@ import { WhyNutritva } from './components/WhyNutritva';
 import { Testimonials } from './components/Testimonials';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckoutSuccessModal } from './components/CheckoutSuccessModal';
+import { AuthModal } from './components/AuthModal';
+import { ProfileDrawer } from './components/ProfileDrawer';
 import { Footer } from './components/Footer';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -21,6 +24,14 @@ export function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [wishlist, setWishlist] = useState<string[]>(['california-almonds']);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
+  
+  // Auth & Profile state
+  const [user, setUser] = useState<UserDTO | null>(() => api.getCurrentUser());
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [recentOrders, setRecentOrders] = useState<OrderDTO[]>([]);
+
+  // Cart & checkout state
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutSuccess, setIsCheckoutSuccess] = useState(false);
   const [checkoutTotal, setCheckoutTotal] = useState(0);
@@ -138,9 +149,13 @@ export function App() {
     try {
       const placedOrder = await api.placeOrder({
         items: cartItems,
+        customerName: user?.name,
+        customerPhone: user?.phone,
+        deliveryAddress: user?.address,
         couponCode: appliedCode,
       });
       setCurrentOrder(placedOrder);
+      setRecentOrders((prev) => [placedOrder, ...prev]);
       setCheckoutTotal(placedOrder.grandTotal || total);
       setIsCartOpen(false);
       setIsCheckoutSuccess(true);
@@ -153,6 +168,17 @@ export function App() {
       setIsCheckoutSuccess(true);
       setCartItems([]);
     }
+  };
+
+  const handleAuthSuccess = (newUser: UserDTO) => {
+    setUser(newUser);
+    showToast(`Welcome, ${newUser.name}!`);
+  };
+
+  const handleLogout = () => {
+    api.logout();
+    setUser(null);
+    showToast('Signed out of your account');
   };
 
   const scrollToCatalog = () => {
@@ -191,7 +217,7 @@ export function App() {
         </div>
       )}
 
-      {/* Global Navbar */}
+      {/* Global Navbar with Top Right Profile Section */}
       <Navbar
         cartCount={cartCount}
         cartTotal={cartTotal}
@@ -204,6 +230,9 @@ export function App() {
           setSelectedCategory(cat);
           scrollToCatalog();
         }}
+        user={user}
+        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenProfile={() => setIsProfileOpen(true)}
       />
 
       <main style={{ flex: 1, backgroundColor: '#fcfcfc' }}>
@@ -283,6 +312,27 @@ export function App() {
         onClose={() => setIsCheckoutSuccess(false)}
         orderTotal={checkoutTotal}
         order={currentOrder}
+      />
+
+      {/* Authentication Modal (Login / Sign Up) */}
+      <AuthModal
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+        onSuccess={handleAuthSuccess}
+      />
+
+      {/* User Profile Drawer (Orders, Addresses, Account Info) */}
+      <ProfileDrawer
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+        user={user}
+        onLogout={handleLogout}
+        recentOrders={recentOrders}
+        onOpenOrder={(ord) => {
+          setCurrentOrder(ord);
+          setIsProfileOpen(false);
+          setIsCheckoutSuccess(true);
+        }}
       />
     </div>
   );

@@ -197,4 +197,96 @@ export const api = {
       return null;
     }
   },
+
+  // Authentication: Login
+  async login(payload: { emailOrPhone: string; password?: string }) {
+    try {
+      const res = await fetch(`${API_BASE}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.success && data.user) {
+        localStorage.setItem('nutritva_user', JSON.stringify(data.user));
+        if (data.token) localStorage.setItem('nutritva_token', data.token);
+      }
+      return data;
+    } catch {
+      // Local demo fallback
+      const demoUser = {
+        id: 'USR-101',
+        name: 'Ashish Mohanty',
+        email: payload.emailOrPhone.includes('@') ? payload.emailOrPhone : 'mohantyashish61@gmail.com',
+        phone: payload.emailOrPhone.includes('@') ? '+91 98765 43210' : payload.emailOrPhone,
+        address: 'Flat 402, Green Meadows, Indiranagar, Bengaluru - 560038',
+      };
+      localStorage.setItem('nutritva_user', JSON.stringify(demoUser));
+      return { success: true, message: `Welcome back, ${demoUser.name}!`, user: demoUser };
+    }
+  },
+
+  // Authentication: Sign Up
+  async signup(payload: { name: string; email?: string; phone?: string; password?: string; address?: string }) {
+    try {
+      const res = await fetch(`${API_BASE}/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.success && data.user) {
+        localStorage.setItem('nutritva_user', JSON.stringify(data.user));
+        if (data.token) localStorage.setItem('nutritva_token', data.token);
+      }
+      return data;
+    } catch {
+      const newUser = {
+        id: 'USR-' + Math.floor(1000 + Math.random() * 9000),
+        name: payload.name,
+        email: payload.email || 'customer@nutritva.com',
+        phone: payload.phone || '+91 98765 43210',
+        address: payload.address || 'Bengaluru, Karnataka (Express 10-Min Delivery)',
+      };
+      localStorage.setItem('nutritva_user', JSON.stringify(newUser));
+      return { success: true, message: 'Account created successfully! Welcome to Nutritva.', user: newUser };
+    }
+  },
+
+  // Authentication: Demo Login
+  async getDemoUser() {
+    try {
+      const res = await fetch(`${API_BASE}/auth/demo`);
+      const data = await res.json();
+      if (data.success && data.user) {
+        localStorage.setItem('nutritva_user', JSON.stringify(data.user));
+      }
+      return data;
+    } catch {
+      const demoUser = {
+        id: 'USR-101',
+        name: 'Ashish Mohanty',
+        email: 'mohantyashish61@gmail.com',
+        phone: '+91 98765 43210',
+        address: 'Flat 402, Green Meadows, Indiranagar, Bengaluru - 560038',
+      };
+      localStorage.setItem('nutritva_user', JSON.stringify(demoUser));
+      return { success: true, message: 'Logged in as Demo User!', user: demoUser };
+    }
+  },
+
+  // Auth: Session State Helpers
+  getCurrentUser() {
+    try {
+      const saved = localStorage.getItem('nutritva_user');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  },
+
+  logout() {
+    localStorage.removeItem('nutritva_user');
+    localStorage.removeItem('nutritva_token');
+  },
 };

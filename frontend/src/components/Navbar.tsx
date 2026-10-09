@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { ShoppingBag, Search, Heart, Zap, MapPin, X } from 'lucide-react';
+import { ShoppingBag, Search, Heart, Zap, MapPin, X, User } from 'lucide-react';
 import type { ProductCategory } from '../types/product';
+import type { UserDTO } from '../types/auth';
 
 interface NavbarProps {
   cartCount: number;
@@ -11,6 +12,9 @@ interface NavbarProps {
   onSelectCategory: (cat: ProductCategory) => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
+  user?: UserDTO | null;
+  onOpenAuth?: () => void;
+  onOpenProfile?: () => void;
 }
 
 export const Navbar = ({
@@ -22,6 +26,9 @@ export const Navbar = ({
   onSelectCategory,
   searchQuery,
   onSearchChange,
+  user,
+  onOpenAuth,
+  onOpenProfile,
 }: NavbarProps) => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
 
@@ -209,6 +216,74 @@ export const Navbar = ({
               </span>
             )}
           </div>
+
+          {/* Top Right Profile & Login/Signup Section */}
+          {user ? (
+            <button
+              id="user-profile-btn"
+              onClick={onOpenProfile}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                backgroundColor: '#ffffff',
+                border: '1.5px solid #e5e7eb',
+                borderRadius: 'var(--radius-md)',
+                padding: '7px 12px',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+              }}
+              title="View Profile, Orders & Addresses"
+            >
+              <div
+                style={{
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--blinkit-yellow)',
+                  color: '#1c1c1c',
+                  fontWeight: 900,
+                  fontSize: '0.85rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                {user.name.charAt(0).toUpperCase()}
+              </div>
+              <div style={{ textAlign: 'left', lineHeight: 1.15 }}>
+                <div style={{ fontSize: '0.825rem', fontWeight: 800, color: '#1c1c1c' }}>
+                  {user.name.split(' ')[0]}
+                </div>
+                <div style={{ fontSize: '0.68rem', color: 'var(--blinkit-green)', fontWeight: 700 }}>
+                  ● Profile
+                </div>
+              </div>
+            </button>
+          ) : (
+            <button
+              id="login-signup-btn"
+              onClick={onOpenAuth}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                backgroundColor: '#ffffff',
+                border: '1.5px solid #e5e7eb',
+                borderRadius: 'var(--radius-md)',
+                padding: '9px 14px',
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: '0.85rem',
+                color: '#1c1c1c',
+                transition: 'all 0.15s ease',
+              }}
+              title="Login or Create Account"
+            >
+              <User size={18} color="var(--blinkit-green)" />
+              <span>Login / Sign Up</span>
+            </button>
+          )}
 
           {/* Blinkit Green Cart Button */}
           <button
