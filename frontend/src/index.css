@@ -238,4 +238,165 @@ button {
   overflow: hidden !important;
 }
 
+/* ============================================================
+   3D IMMERSIVE STYLING & BACKGROUND VIDEO EFFECTS
+   ============================================================ */
+
+.hero-video-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-video-media {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%) scale(1.05);
+  object-fit: cover;
+  filter: brightness(0.6) saturate(1.25) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 30%, rgba(248, 203, 70, 0.16) 0%, transparent 60%),
+              linear-gradient(135deg, rgba(8, 28, 16, 0.90) 0%, rgba(12, 40, 24, 0.78) 50%, rgba(0, 0, 0, 0.90) 100%);
+  backdrop-filter: blur(1.5px);
+  z-index: 1;
+}
+
+/* 3D Perspective & Holographic Showcase */
+.perspective-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.card-3d-wrapper {
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.card-3d-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 10;
+  mix-blend-mode: overlay;
+}
+
+.floating-3d-chip {
+  animation: float3D 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.floating-3d-chip-alt {
+  animation: float3DAlt 4.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes float3D {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) translateZ(35px);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg) translateZ(50px);
+  }
+}
+
+@keyframes float3DAlt {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) translateZ(40px);
+  }
+  50% {
+    transform: translateY(8px) rotate(-2deg) translateZ(55px);
+  }
+}
+
+@keyframes pulseGlow3D {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(248, 203, 70, 0.3), 0 0 50px rgba(12, 131, 31, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(248, 203, 70, 0.5), 0 0 85px rgba(12, 131, 31, 0.35);
+  }
+}
+
+.glass-panel-3d {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.glass-panel-3d-light {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+.btn-3d-primary {
+  background: linear-gradient(135deg, #109626 0%, #0c831f 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(12, 131, 31, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 800;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+}
+
+.btn-3d-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(12, 131, 31, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.btn-3d-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-3d-gold {
+  background: linear-gradient(135deg, #ffd84d 0%, #f8cb46 100%);
+  color: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(248, 203, 70, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 800;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+}
+
+.btn-3d-gold:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(248, 203, 70, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.btn-3d-gold:active {
+  transform: translateY(1px);
+}
+
 
